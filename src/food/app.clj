@@ -15,7 +15,8 @@
 
 ;; Load public routes
 (require '[food.view.home :refer [home-routes]]
-         '[food.view.about :refer [about-routes]])
+         '[food.view.about :refer [about-routes]]
+         '[food.view.js-bundle :refer [js-routes]])
 
 ;; Load authentication routes
 (require '[food.view.auth :refer [auth-routes]])
@@ -32,6 +33,7 @@
               auth-routes
               profile-routes
               admin-routes
+              js-routes
               (route/resources "/")
               (route/not-found "<h1>Page not found.</h1>"))
       (session-manager/wrap-session)

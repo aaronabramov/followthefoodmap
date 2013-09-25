@@ -5,7 +5,8 @@
             [compojure.route :as route]
             [stencil.loader :as stencil]
             [food.middleware.session :as session-manager]
-            [food.middleware.context :as context-manager]))
+            [food.middleware.context :as context-manager]
+            [ring.middleware.reload :refer [wrap-reload]]))
 
 ;; Initialization
 ; Add required code here (database, etc.)
@@ -38,4 +39,5 @@
               (route/not-found "<h1>Page not found.</h1>"))
       (session-manager/wrap-session)
       (context-manager/wrap-context-root)
+      (wrap-reload)
       (handler/site)))

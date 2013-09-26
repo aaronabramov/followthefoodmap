@@ -2,10 +2,9 @@
   (:require [compojure.core :refer [defroutes GET]]
             [clojure.java.shell :refer [sh]]))
 
-(def app (slurp "./resources/coffee/app.coffee"))
-
 (defn compiled-bundle []
-  (:out (sh "coffee" "-s" "--compile" :in app)))
+  "Compiled browserify bundle"
+  (:out (sh "coffee" "./scripts/bundle.coffee")))
 
 (defroutes js-routes
   (GET "/bundle.js" []

@@ -11,4 +11,5 @@
                  [cheshire "5.2.0"]]
   :plugins [[lein-ring "0.8.5"]]
   :ring {:handler food.app/site-handler}
+  :aot [food.server]
   :main food.server)

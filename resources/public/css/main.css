@@ -39,3 +39,11 @@ body {
   font-weight: bold;
   color: #5e5e5e;
 }
+
+.header-hr {
+  border: 0;
+  height: 1px;
+  background-image: url('/img/hr.png?4');
+  background-repeat: repeat-x;
+  width: 790px;
+}
